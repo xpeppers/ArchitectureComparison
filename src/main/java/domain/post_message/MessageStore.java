@@ -1,8 +1,8 @@
 package domain.post_message;
 
 import domain.entity.Message;
-import domain.entity.Username;
+import domain.entity.User;
 
 public interface MessageStore {
-    void addMessageForUser(Username username, Message message);
+    void addMessageForUser(User user, Message message);
 }

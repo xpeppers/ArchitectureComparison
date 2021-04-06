@@ -1,7 +1,7 @@
 package domain.post_message;
 
 import domain.entity.Message;
-import domain.entity.Username;
+import domain.entity.User;
 
 public class PostMessageUseCase {
     private MessageStore messageStore;
@@ -10,7 +10,7 @@ public class PostMessageUseCase {
         this.messageStore = messageStore;
     }
 
-    public void postMessage(Username username, Message message) {
-        messageStore.addMessageForUser(username, message);
+    public void postMessage(User user, Message message) {
+        messageStore.addMessageForUser(user, message);
     }
 }

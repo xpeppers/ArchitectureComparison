@@ -2,7 +2,7 @@ package domain.read_messages;
 
 
 import domain.entity.Messages;
-import domain.entity.Username;
+import domain.entity.User;
 
 public class ReadMessagesUseCase {
     private MessageRetriever messageRetriever;
@@ -11,7 +11,7 @@ public class ReadMessagesUseCase {
         this.messageRetriever = messageRetriever;
     }
 
-    public Messages getMessagesBy(Username username) {
-        return messageRetriever.getMessagesBy(username);
+    public Messages getMessagesBy(User user) {
+        return messageRetriever.getMessagesBy(user);
     }
 }

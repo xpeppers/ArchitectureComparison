@@ -1,8 +1,8 @@
 package domain.read_messages;
 
 import domain.entity.Messages;
-import domain.entity.Username;
+import domain.entity.User;
 
 public interface MessageRetriever {
-    Messages getMessagesBy(Username username);
+    Messages getMessagesBy(User user);
 }

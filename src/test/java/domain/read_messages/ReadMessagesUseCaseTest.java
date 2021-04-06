@@ -1,9 +1,7 @@
 package domain.read_messages;
 
 import domain.entity.Messages;
-import domain.entity.Username;
-import domain.read_messages.MessageRetriever;
-import domain.read_messages.ReadMessagesUseCase;
+import domain.entity.User;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -18,11 +16,11 @@ public class ReadMessagesUseCaseTest {
     void get_all_messages_posted_by_a_user() {
         ReadMessagesUseCase useCase = new ReadMessagesUseCase(messageRetriever);
         Messages messages = new Messages();
-        Username username = new Username("Alice");
+        User user = new User("Alice");
 
-        when(messageRetriever.getMessagesBy(username)).thenReturn(messages);
+        when(messageRetriever.getMessagesBy(user)).thenReturn(messages);
 
-        Messages actualMessages = useCase.getMessagesBy(username);
+        Messages actualMessages = useCase.getMessagesBy(user);
 
         assertThat(actualMessages).isEqualTo(messages);
     }

@@ -1,9 +1,7 @@
 package domain.post_message;
 
 import domain.entity.Message;
-import domain.entity.Username;
-import domain.post_message.MessageStore;
-import domain.post_message.PostMessageUseCase;
+import domain.entity.User;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.mock;
@@ -16,11 +14,11 @@ public class PostMessageUseCaseTest {
     @Test
     void a_user_can_post_a_message() {
         PostMessageUseCase postMessage = new PostMessageUseCase(messageStore);
-        Username username = new Username("Alice");
+        User user = new User("Alice");
         Message message = new Message("I love the weather");
 
-        postMessage.postMessage(username, message);
+        postMessage.postMessage(user, message);
 
-        verify(messageStore).addMessageForUser(username, message);
+        verify(messageStore).addMessageForUser(user, message);
     }
 }
