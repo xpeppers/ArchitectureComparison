@@ -1,5 +1,5 @@
 package domain;
 
-public interface MessageRepository {
+public interface MessageStore {
     void addMessageForUser(Username username, Message message);
 }

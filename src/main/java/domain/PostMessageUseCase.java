@@ -1,13 +1,13 @@
 package domain;
 
 public class PostMessageUseCase {
-    private MessageRepository messageRepository;
+    private MessageStore messageStore;
 
-    public PostMessageUseCase(MessageRepository messageRepository) {
-        this.messageRepository = messageRepository;
+    public PostMessageUseCase(MessageStore messageStore) {
+        this.messageStore = messageStore;
     }
 
     public void postMessage(Username username, Message message) {
-        messageRepository.addMessageForUser(username, message);
+        messageStore.addMessageForUser(username, message);
     }
 }
