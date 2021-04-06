@@ -1,5 +1,8 @@
-package domain;
+package domain.read_messages;
 
+
+import domain.entity.Messages;
+import domain.entity.Username;
 
 public class ReadMessagesUseCase {
     private MessageRetriever messageRetriever;

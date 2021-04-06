@@ -1,4 +1,4 @@
-package domain;
+package domain.entity;
 
 public class Username {
     public Username(String name) {

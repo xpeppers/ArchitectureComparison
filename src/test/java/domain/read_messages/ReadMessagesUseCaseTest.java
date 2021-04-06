@@ -1,5 +1,9 @@
-package domain;
+package domain.read_messages;
 
+import domain.entity.Messages;
+import domain.entity.Username;
+import domain.read_messages.MessageRetriever;
+import domain.read_messages.ReadMessagesUseCase;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;

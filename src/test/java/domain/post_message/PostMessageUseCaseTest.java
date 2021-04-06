@@ -1,5 +1,9 @@
-package domain;
+package domain.post_message;
 
+import domain.entity.Message;
+import domain.entity.Username;
+import domain.post_message.MessageStore;
+import domain.post_message.PostMessageUseCase;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.mock;

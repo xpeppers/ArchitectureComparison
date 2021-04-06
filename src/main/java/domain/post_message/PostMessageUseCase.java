@@ -1,4 +1,7 @@
-package domain;
+package domain.post_message;
+
+import domain.entity.Message;
+import domain.entity.Username;
 
 public class PostMessageUseCase {
     private MessageStore messageStore;
