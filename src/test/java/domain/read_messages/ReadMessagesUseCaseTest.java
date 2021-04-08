@@ -16,11 +16,10 @@ public class ReadMessagesUseCaseTest {
     void get_all_messages_posted_by_a_user() {
         ReadMessagesUseCase useCase = new ReadMessagesUseCase(messageRetriever);
         Messages messages = new Messages();
-        User user = new User("Alice");
 
-        when(messageRetriever.getMessagesBy(user)).thenReturn(messages);
+        when(messageRetriever.getMessagesBy(new User("Alice"))).thenReturn(messages);
 
-        Messages actualMessages = useCase.getMessagesBy(user);
+        Messages actualMessages = useCase.getMessagesBy("Alice");
 
         assertThat(actualMessages).isEqualTo(messages);
     }
