@@ -14,11 +14,9 @@ public class PostMessageUseCaseTest {
     @Test
     void a_user_can_post_a_message() {
         PostMessageUseCase postMessage = new PostMessageUseCase(messageStore);
-        User user = new User("Alice");
-        Message message = new Message("I love the weather");
 
-        postMessage.postMessage(user, message);
+        postMessage.postMessage("Alice", "I love the weather");
 
-        verify(messageStore).addMessageForUser(user, message);
+        verify(messageStore).addMessageForUser(new User("Alice"), new Message("I love the weather"));
     }
 }
