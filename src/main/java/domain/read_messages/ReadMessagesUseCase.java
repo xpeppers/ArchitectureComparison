@@ -5,7 +5,7 @@ import domain.entity.Messages;
 import domain.entity.User;
 
 public class ReadMessagesUseCase {
-    private MessageRetriever messageRetriever;
+    private final MessageRetriever messageRetriever;
 
     public ReadMessagesUseCase(MessageRetriever messageRetriever) {
         this.messageRetriever = messageRetriever;

@@ -4,7 +4,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class Message {
-    private String message;
+    private final String message;
 
     public Message(String message) {
         this.message = message;
