@@ -19,7 +19,7 @@ public class ReadMessagesUseCaseTest {
 
         when(messageRetriever.getMessagesBy(new User("Alice"))).thenReturn(messages);
 
-        Messages actualMessages = useCase.getMessagesBy("Alice");
+        Messages actualMessages = useCase.getMessagesOf("Alice");
 
         assertThat(actualMessages).isEqualTo(messages);
     }

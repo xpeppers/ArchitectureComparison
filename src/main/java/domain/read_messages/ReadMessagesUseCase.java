@@ -10,7 +10,7 @@ public class ReadMessagesUseCase {
         this.messageRetriever = messageRetriever;
     }
 
-    public Messages getMessagesBy(String username) {
+    public Messages getMessagesOf(String username) {
         return messageRetriever.getMessagesBy(new User(username));
     }
 }
