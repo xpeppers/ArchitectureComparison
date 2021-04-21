@@ -10,5 +10,5 @@ Trying [this kata](https://github.com/sandromancuso/social_networking_kata) with
 * implement a fake message store to store and retrive messages
 
 ## TODO
-* equals su `User`
-* handle messages with their age (timeline)
+* equals on `User` class
+* handle messages with their age (aka "timeline")
