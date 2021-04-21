@@ -1,4 +1,4 @@
-package domain.entity;
+package domain.message;
 
 public class Messages {
 }

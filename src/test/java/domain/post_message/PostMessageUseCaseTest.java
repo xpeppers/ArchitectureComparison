@@ -1,7 +1,7 @@
 package domain.post_message;
 
-import domain.entity.Message;
-import domain.entity.User;
+import domain.message.Message;
+import domain.message.User;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.mock;
