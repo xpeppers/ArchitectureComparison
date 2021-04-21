@@ -1,4 +1,5 @@
 public class SocialNetworkApp {
+    public static final String NULL_COMMAND = "";
     private SocialNetworkConsole console;
     private SocialNetworkInterpreter interpreter;
 
@@ -8,11 +9,12 @@ public class SocialNetworkApp {
     }
 
     public void run() {
-        String string = null;
-        do {
-            string = console.read();
+        while (true) {
+            String string = console.read();
+            if (NULL_COMMAND.equals(string)) return;
+
             String output = interpreter.accept(string);
             console.write(output);
-        } while (!string.equals(""));
+        }
     }
 }

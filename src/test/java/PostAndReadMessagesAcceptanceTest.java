@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.Test;
-import org.mockito.InOrder;
 
 import static org.mockito.Mockito.*;
 
@@ -28,13 +27,13 @@ public class PostAndReadMessagesAcceptanceTest {
                 .thenReturn("Alice -> I love the weather today")
                 .thenReturn("Alice")
                 .thenReturn("");
-        when(interpreter.accept("Alice -> I love the weather today")).thenReturn("");
-        when(interpreter.accept("Alice")).thenReturn("I love the weather today");
+        when(interpreter.accept(any()))
+                .thenReturn("")
+                .thenReturn("I love the weather today");
 
         app.run();
 
         verify(console).write("");
         verify(console).write("I love the weather today");
-        verify(console).write("");
     }
 }
