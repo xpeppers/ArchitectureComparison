@@ -1,3 +1,6 @@
+import console.SocialNetworkApp;
+import console.SocialNetworkConsole;
+import console.SocialNetworkInterpreter;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.*;

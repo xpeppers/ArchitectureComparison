@@ -1,3 +1,5 @@
+package console;
+
 public class SocialNetworkApp {
     public static final String NULL_COMMAND = "";
     private SocialNetworkConsole console;

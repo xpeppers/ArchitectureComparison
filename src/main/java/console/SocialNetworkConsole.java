@@ -1,3 +1,5 @@
+package console;
+
 public class SocialNetworkConsole {
     public void write(String string) {
         throw new UnsupportedOperationException();
