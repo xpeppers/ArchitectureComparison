@@ -3,9 +3,9 @@ package console;
 public class SocialNetworkApp {
     public static final String NULL_COMMAND = "";
     private SocialNetworkConsole console;
-    private SocialNetworkInterpreter interpreter;
+    private SocialNetworkController interpreter;
 
-    public SocialNetworkApp(SocialNetworkConsole console, SocialNetworkInterpreter interpreter) {
+    public SocialNetworkApp(SocialNetworkConsole console, SocialNetworkController interpreter) {
         this.console = console;
         this.interpreter = interpreter;
     }

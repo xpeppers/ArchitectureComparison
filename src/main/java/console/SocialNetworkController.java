@@ -1,6 +1,6 @@
 package console;
 
-public class SocialNetworkInterpreter {
+public class SocialNetworkController {
     public String accept(String string) {
         throw new RuntimeException();
     }
