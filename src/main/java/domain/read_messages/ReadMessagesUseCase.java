@@ -17,7 +17,7 @@ public class ReadMessagesUseCase {
         return messages.asString();
     }
 
-    public Messages getMessagesOf(String username) {
+    private Messages getMessagesOf(String username) {
         return messageRetriever.getMessagesBy(new User(username));
     }
 }
