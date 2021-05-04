@@ -13,4 +13,12 @@ class ParserTest {
         assertThat(command.username()).isEqualTo("Alice");
         assertThat(command.message()).isEqualTo("Hi all!");
     }
+
+    @Test
+    void parse_a_read_message() {
+        Command command = new Parser().parse("Bob");
+
+        assertThat(command.username()).isEqualTo("Bob");
+        assertThat(command.message()).isNull();
+    }
 }

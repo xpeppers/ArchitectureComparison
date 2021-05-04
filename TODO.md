@@ -2,6 +2,7 @@
 * implement a fake message store to store and retrive messages
 * impedire che si possa passare in costruzione il controller alla `SocialNetworkApp`
 * equals on `User` class
+* optional per message sul Command?
   
 * hook a console interface to the app
 * an end-to-end test to actually use the app as a real user
