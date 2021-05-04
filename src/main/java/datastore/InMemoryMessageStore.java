@@ -15,9 +15,9 @@ public class InMemoryMessageStore implements MessageStore, MessageRetriever {
 
     @Override
     public void addMessageForUser(User user, Message message) {
-        messages.putIfAbsent(user, new Messages());
-        Messages userMessages = messages.get(user);
+        Messages userMessages = messages.getOrDefault(user, new Messages());
         userMessages.add(message);
+        messages.put(user, userMessages);
     }
 
     @Override
