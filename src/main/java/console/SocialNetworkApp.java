@@ -10,6 +10,10 @@ public class SocialNetworkApp {
     private final SocialNetworkConsole console;
     private final SocialNetworkController controller;
 
+    public static void main(String[] args) {
+        SocialNetworkApp.main(new SocialNetworkConsole()).run();
+    }
+
     public static SocialNetworkApp main(SocialNetworkConsole console) {
         Parser parser = new Parser();
         InMemoryMessageStore messageStore = new InMemoryMessageStore();
@@ -27,11 +31,11 @@ public class SocialNetworkApp {
 
     public void run() {
         while (true) {
-            String input = console.read();
+            String input = console.readLine();
             if (NULL_COMMAND.equals(input)) return;
 
             String output = controller.accept(input);
-            console.write(output);
+            console.writeLine(output);
         }
     }
 }

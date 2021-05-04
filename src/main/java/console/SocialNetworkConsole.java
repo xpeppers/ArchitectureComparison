@@ -1,11 +1,14 @@
 package console;
 
+import java.util.Scanner;
+
 public class SocialNetworkConsole {
-    public void write(String string) {
-        throw new UnsupportedOperationException();
+    public void writeLine(String string) {
+        System.out.println(string);
     }
 
-    public String read() {
-        throw new UnsupportedOperationException();
+    public String readLine() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
     }
 }
