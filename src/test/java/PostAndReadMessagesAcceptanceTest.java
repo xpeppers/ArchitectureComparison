@@ -2,6 +2,10 @@ import console.Parser;
 import console.SocialNetworkApp;
 import console.SocialNetworkConsole;
 import console.SocialNetworkController;
+import datastore.InMemoryMessageStore;
+import domain.message.Message;
+import domain.message.User;
+import domain.post_message.MessageStore;
 import domain.post_message.PostMessageUseCase;
 import domain.read_messages.ReadMessagesUseCase;
 import org.junit.jupiter.api.Disabled;
@@ -13,7 +17,7 @@ public class PostAndReadMessagesAcceptanceTest {
 
     private SocialNetworkConsole console = mock(SocialNetworkConsole.class);
     private SocialNetworkController controller
-            = new SocialNetworkController(new Parser(), new PostMessageUseCase(null), new ReadMessagesUseCase(null));
+            = new SocialNetworkController(new Parser(), new PostMessageUseCase(new InMemoryMessageStore()), new ReadMessagesUseCase(null));
 
     @Test
     void post_a_message_and_print_empty_output() {
