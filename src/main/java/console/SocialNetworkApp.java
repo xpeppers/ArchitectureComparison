@@ -6,13 +6,9 @@ import domain.read_messages.ReadMessagesUseCase;
 
 public class SocialNetworkApp {
     public static final String NULL_COMMAND = "";
-    private SocialNetworkConsole console;
-    private SocialNetworkController controller;
 
-    private SocialNetworkApp(SocialNetworkConsole console, SocialNetworkController controller) {
-        this.console = console;
-        this.controller = controller;
-    }
+    private final SocialNetworkConsole console;
+    private final SocialNetworkController controller;
 
     public static SocialNetworkApp main(SocialNetworkConsole console) {
         Parser parser = new Parser();
@@ -24,12 +20,17 @@ public class SocialNetworkApp {
         return new SocialNetworkApp(console, controller);
     }
 
+    private SocialNetworkApp(SocialNetworkConsole console, SocialNetworkController controller) {
+        this.console = console;
+        this.controller = controller;
+    }
+
     public void run() {
         while (true) {
-            String string = console.read();
-            if (NULL_COMMAND.equals(string)) return;
+            String input = console.read();
+            if (NULL_COMMAND.equals(input)) return;
 
-            String output = controller.accept(string);
+            String output = controller.accept(input);
             console.write(output);
         }
     }
