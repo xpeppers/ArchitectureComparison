@@ -1,18 +1,27 @@
 package datastore;
 
 import domain.message.Message;
+import domain.message.Messages;
 import domain.message.User;
 import domain.post_message.MessageStore;
+import domain.read_messages.MessageRetriever;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class InMemoryMessageStore implements MessageStore {
+public class InMemoryMessageStore implements MessageStore, MessageRetriever {
 
-    private final Map<User, Message> messages = new HashMap<>();
+    private final Map<User, Messages> messages = new HashMap<>();
 
     @Override
     public void addMessageForUser(User user, Message message) {
-        messages.put(user, message);
+        messages.putIfAbsent(user, new Messages());
+        Messages userMessages = messages.get(user);
+        userMessages.add(message);
+    }
+
+    @Override
+    public Messages getMessagesBy(User user) {
+        return messages.getOrDefault(user, new Messages());
     }
 }
