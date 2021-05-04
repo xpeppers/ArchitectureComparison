@@ -5,6 +5,8 @@ import domain.read_messages.ReadMessagesUseCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static java.util.Arrays.asList;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.*;
 
 class SocialNetworkControllerTest {
@@ -28,14 +30,14 @@ class SocialNetworkControllerTest {
 
         verify(postMessageUseCase).postMessage("Alice", "I love the weather today");
     }
-
     @Test
     void when_string_contains_only_username_invokes_read_messages_use_case() {
         String inputString = "Bob";
         when(parser.parse(inputString)).thenReturn(new Command("Bob"));
+        when(readMessageUseCase.readMessagesOf("Bob")).thenReturn(asList("Hi there!", "What a nice day."));
 
-        controller.accept(inputString);
+        String result = controller.accept(inputString);
 
-        verify(readMessageUseCase).getMessagesOf("Bob");
+        assertThat(result).isEqualTo("Hi there!\nWhat a nice day.");
     }
 }

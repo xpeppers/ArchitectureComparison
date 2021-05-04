@@ -19,4 +19,8 @@ public class Message {
     public int hashCode() {
         return new HashCodeBuilder(17, 37).append(message).toHashCode();
     }
+
+    public String asString() {
+        return message;
+    }
 }

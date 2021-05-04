@@ -3,6 +3,12 @@ package console;
 import domain.post_message.PostMessageUseCase;
 import domain.read_messages.ReadMessagesUseCase;
 
+import java.util.List;
+import java.util.StringJoiner;
+import java.util.stream.Collectors;
+
+import static java.lang.String.join;
+
 public class SocialNetworkController {
     private Parser parser;
     private PostMessageUseCase postMessageUseCase;
@@ -17,7 +23,8 @@ public class SocialNetworkController {
     public String accept(String string) {
         Command command = parser.parse(string);
         if (command.message() == null) {
-            readMessageUseCase.getMessagesOf(command.username());
+            List<String> strings = readMessageUseCase.readMessagesOf(command.username());
+            return join("\n", strings);
         } else {
             postMessageUseCase.postMessage(command.username(), command.message());
         }

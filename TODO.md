@@ -3,6 +3,8 @@
 * impedire che si possa passare in costruzione il controller alla `SocialNetworkApp`
 * optional per message sul Command?
   
+* write the assumptions of the kata?
+  
 * hook a console interface to the app
 * an end-to-end test to actually use the app as a real user
 
